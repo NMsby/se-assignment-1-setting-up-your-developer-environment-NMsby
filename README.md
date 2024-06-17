@@ -739,9 +739,15 @@ For example: Check the already created databases with show databases command:
 9. Document Your Setup:
     Create a comprehensive document outlining the steps you've taken to set up your developer environment. Include any configurations, customizations, or troubleshooting steps encountered during the process. 
 
-#Deliverables:
+# Deliverables:
 - Document detailing the setup process with step-by-step instructions and screenshots where necessary.
+      
+      Done
+
 - A GitHub repository containing a sample project initialized with Git and any necessary configuration files (e.g., .gitignore).
+
+      GitHub Repository: https://github.com/NMsby/eccomerce-django.git
+
 - A reflection on the challenges faced during setup and strategies employed to overcome them.
 
 #Submission:
