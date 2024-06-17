@@ -439,19 +439,302 @@ TASK 3. Set Up Version Control System:
 TASK 4. Install Necessary Programming Languages and Runtimes:
   Instal Python from http://wwww.python.org programming language required for your project and install their respective compilers, interpreters, or runtimes. Ensure you have the necessary tools to build and execute your code.
 
+-------------------------- STEPS TO INSTALL PYTHON -----------------------------
+
+# STEP 1: Select Python Version
+We recommend Python 3, as Python 2 reached its end of life in 2020. Download Python 2 only if you work with legacy scripts and older projects. Also, choose a stable release over the newest since the newest release may have bugs and issues.
+
+# STEP 2: Download Python Executable Installer 
+Start by downloading the Python executable installer for Windows:
+1. Open a web browser and navigate to the Downloads for Windows section of the official Python website. >>https://www.python.org/downloads/windows/<<
+
+2. Locate the desired Python version. 
+
+![Python.org Download Page](image-40.png)
+
+3. Click the link to download the file. Choose either the Windows 32-bit or 64-bit installer.
+
+The download is approximately 25MB.
+
+# STEP 3: Run Executable Installer
+
+The steps below guide you through the installation process:
+
+1. Run the downloaded Python Installer.
+
+2. The installation window shows two checkboxes:
+
+    Admin privileges. The parameter controls whether to install Python for the current or all system users. This option allows you to change the installation folder for Python.
+    Add Python to PATH. The second option places the executable in the PATH variable after installation. You can also add Python to the PATH environment variable manually later.
+
+![Python Setup Wizard](image-41.png)
+
+For the most straightforward installation, we recommend ticking both checkboxes.
+
+3. Select the Install Now option for the recommended installation (in that case, skip the next two steps).
+
+To adjust the default installation options, choose Customize installation instead and proceed to the following step.
+
+![Python Setup - Installation Path](image-42.png)
+
+The default installation installs Python to C:\Users\[user]\AppData\Local\Programs\Python\Python[version] for the current user. It includes IDLE (the default Python editor), the PIP package manager, and additional documentation. The installer also creates necessary shortcuts and file associations.
+
+Customizing the installation allows changing these installation options and parameters.
+
+4. Choose the optional installation features. Python works without these features, but adding them improves the program's usability.
+
+![alt Python Setup - Optional Features](image-43.png)
+
+Click Next to proceed to the Advanced Options screen.
+
+5. The second part of customizing the installation includes advanced options.
+
+Choose whether to install Python for all users. The option changes the install location to C:\Program Files\Python[version]. If selecting the location manually, a common choice is C:\Python[version] because it avoids spaces in the path, and all users can access it. Due to administrative rights, both paths may cause issues during package installation.
+
+Other advanced options include creating shortcuts, file associations, and adding Python to PATH.
+
+![Python Setup - Advanced Options](image-44.png)
+
+After picking the appropriate options, click Install to start the installation.
+
+6. Select whether to disable the path length limit. Choosing this option will allow Python to bypass the 260-character MAX_PATH limit. 
+
+![Python Setup - Completed](image-45.png)
+
+The option will not affect any other system settings, and disabling it resolves potential name-length issues. We recommend selecting the option and closing the setup.
+
+# STEP 4: Add Python to Path (Optional)
+
+If the Python installer does not include the Add Python to PATH checkbox or you have not selected that option, continue in this step. Otherwise, skip to the next step.
+
+Adding the Python path to the PATH variable alleviates the need to use the full path to access the Python program in the command line. It instructs Windows to review all the folders added to the PATH environment variable and to look for the python.exe program in those folders.
+
+To add Python to PATH, do the following:
+
+1. In the Start menu, search for Environment Variables and press Enter.
+
+![System Environment Variables](image-46.png)
+
+2. Click Environment Variables to open the overview screen.
+System properties environment variables button.
+
+![Environment Variables](image-47.png)
+
+3. Double-click Path on the list to edit it.
+
+![Environment Variables - Path](image-48.png)
+
+Alternatively, select the variable and click the Edit button.
+
+4. Double-click the first empty field and paste the Python installation folder path.
+
+![Python Installation Folder Path](image-49.png)
+
+Alternatively, click the New button instead and paste the path.
+
+5. Click OK to save the changes. If the command prompt is open, restart it for the following step.
+
+# STEP 5: Verify Python Was Installed on Windows
+
+The first way to verify that Python was installed successfully is through the command line. Open the command prompt and run the following command:
+
+      $ python --version
+
+![Python Version](image-50.png)
+
+The output shows the installed Python version.
+
+The second way is to use the GUI to verify the Python installation. Follow the steps below to run the Python interpreter or IDLE:
+
+1. Navigate to the directory where Python was installed on the system.
+
+2. Double-click python.exe (the Python interpreter) or IDLE.
+
+3. The interpreter opens the command prompt and shows the following window:
+
+![Python Shell](image-51.png)
+
+Running IDLE opens Python's built-in IDE:
+
+![Python IDLE](image-52.png)
+
+In both cases, the installed Python version shows on the screen, and the editor is ready for use.
+
+
+---------------------------------------------------------------------------------
+
+
 TASK 5. Install Package Managers:
    If applicable, install package managers like pip (Python).
 
+------------------- INSTALL PIP ON WINDOWS USING ENSUREPIP ----------------------
+
+# STEP 1: Verify PIP Was Installed
+
+To verify whether PIP was installed, enter the following command in the command prompt:
+
+      $ pip --version
+
+If it was installed successfully, you should see the PIP version number, the executable path, and the Python version:
+
+![PIP Version Command](image-53.png)
+
+PIP has not been installed yet if you get the following output:
+
+      'pip' is not recognized as an internal or external command,
+      Operable program or batch file.
+
+If an older version of Python is installed or the PIP installation option is disabled during installation, PIP will not be available. To install PIP, see our article How to Install PIP on Windows.
+
+# STEP 2: Install PIP using ensurepip
+This uses Python to install PIP without downloading or running any scripts. Enter the following command in the command prompt:
+
+      $ python -m ensurepip --upgrade
+
+![Pip Installed](image-54.png)
+
+Wait for the installation to complete. Check that PIP is installed correctly with the following command:
+
+      $ pip --version
+
+![pip version](image-55.png)
+
+# STEP 3: Upgrading PIP for Python on Windows
+New versions of PIP are released occasionally. These versions may improve the functionality or be obligatory for security purposes.
+
+To upgrade PIP on Windows, enter the following in the command prompt:
+
+      $ pip install --upgrade pip
+
+This command uninstalls the previous version and then installs the most current version of PIP.
+
+# STEP 4: Downgrading PIP Version
+
+Downgrading may be necessary if a new version of PIP starts performing undesirably. To downgrade PIP to a prior version, specify the version you want.
+
+To downgrade PIP, use the following syntax:
+
+      $ python -m pip install pip==[version_number]
+
+For example, to downgrade to version 18.1, run:
+
+      $ python -m pip install pip==18.1
+
+![PIP Update](image-56.png)
 
 
-6. Configure a Database (MySQL):
+---------------------------------------------------------------------------------
+
+
+TASK 6. Configure a Database (MySQL):
    Download and install MySQL database. https://dev.mysql.com/downloads/windows/installer/5.7.html
+
+----------------- HOW TO DOWNLOAD INSTALL AND SETUP MYSQL ----------------------
+
+The simplest and recommended method is to download MySQL Installer for Windows from https://dev.mysql.com/downloads/installer/ and execute it.
+
+![MySQL Download Page](image-57.png)
+
+Select mysql-installer-web-community-8.0.23.msi if you have good internet connection, otherwise choose mysql-installer-community-8.0.23.msi.
+
+# Install MySQL
+fter downloading, unzip it, and double click the MSI installer .exe file.
+
+Then follow the steps below:
+
+   1. "Choosing a Setup Type" screen: Choose "Full" setup type. This installs all MySQL products and features. Then click the "Next" button to continue.
+
+   2. "Check Requirements" screen: The installer checks if your pc has the requirements needed. If there is some failing requirements, click on each item to try to resolve them by clicking on the Execute button that will install all requirements automatically. Click "Next".
+
+   3. "Installation" screen: See what products that will be installed. Click "Execute" to download and install the Products. After finishing the installation, click "Next".
+
+   4. "Product Configuration" screen: See what products that will be configured. Click the "MySQL Server 8.0.23" option to configure the MySQL Server. Click the "Next" button. Choose the "Standalone MySQL Server/Classic MySQL Replication" option and click on the "Next" button. In page  "Type and Networking" set Config Type to "Development Computer" and "Connectivity" to "TCP/IP" and "Port" to "3006". Then, click the "Next" button.
+
+   5. "Authentication Method" screen: Choose "Use Strong Password Encryption for Authentication". Click "Next".
+
+   6. "Accounts and Roles" screen: Set a password for the root account. Click "Next".
+
+   7. "Windows Service" screen: Here, you configure the Windows Service to start the server. Keep the default setup, then click "Next".
+
+   8. "Apply Configuration" screen: Click the "Execute" button to apply the Server configuration. After finishing, click the "Finish" button.
+
+   9. "Product Configuration" screen: See that the Product Configuration is completed. Keep the default setting and click on the "Next" and "Finish" button to complete the MySQL package installation.
+
+   10. In the next screen, you can choose to configure the Router. Click on "Next", "Finish" and then click the "Next" button.
+
+   11. "Connect To Server" screen: Type in the root password (from step 6). Click the "Check" button to check if the connection is successful or not. Click on the "Next" button.
+
+   12. "Apply Configuration" screen: Select the options and click the "Execute" button. After finishing, click the "Finish" button.
+
+   13. "Installation Complete" screen: The installation is complete. Click the "Finish" button.
+
+# Verify MySQL Installation
+
+Open the MySQL Command Line Client from cmd.
+
+You should see a mysql> prompt. If you have set any password, write your password here.
+
+Now, you are connected to the MySQL server, and you can execute all the SQL command at mysql> prompt as follows:
+
+For example: Check the already created databases with show databases command:
+
+      $ show databases;
+
+
+---------------------------------------------------------------------------------
+
 
 7. Set Up Development Environments and Virtualization (Optional):
    Consider using virtualization tools like Docker or virtual machines to isolate project dependencies and ensure consistent environments across different machines.
 
 8. Explore Extensions and Plugins:
    Explore available extensions, plugins, and add-ons for your chosen text editor or IDE to enhance functionality, such as syntax highlighting, linting, code formatting, and version control integration.
+
+--------------- ESSENTIAL EXTENSIONS FOR VISUAL STUDIO CODE ----------------------
+* .NET Install Tool:
+      - This extension installs and manages different versions of the .NET SDK and Runtime.
+* Code Runner:
+      - Run C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB.NET, Clojure, Haxe, Obj-C, Rust, Racket, Scheme, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim,
+* Dart:
+      - Dart Language support and debugger for Visual Studio Code
+* Data Workspace:
+      - Additional common functionality for database projects
+* Docker:
+      - Makes it easy to create manage and debug containerized aplpications.
+* Flutter:
+      - Flutter support and debugger for Visual Studio Code.
+* Gradle for Java:
+      - Manages Gradle Projects, run Gradle tasks and provide better Gradle file authoring experience in VS Code
+* PHP Debug:
+      - Debug support for PHP with Xdebug.
+* PHP Intelephense:
+      - PHP code intelligence for Visual Studio Code
+* Prettier 0 Code Formatter:
+      - Code formatter using prettier
+* Pylance:
+      - A performant, feature-rich language server for Python in VS Code.
+* Python:
+      - Python language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.
+* Python Debugger:
+      - Python extension Debugger using debugpy.
+* SQL Bindings:
+      - Enables users to develop and publish Azure Functions with Azure SQL bindings
+* SQL Databse Projects:
+      - Enables users to develop and publish database schemas for MSSQL Databases
+* SQL Server (mssql):
+      - Develop Microsoft SQL Server, Azure SQL Database and SQL Data Warehouse everywhere.
+* SQLite Viewer:
+      - SQLite Viewer for VSCode
+* Tailwind CSS IntelliSense
+      - Intelligent Tailwind CSS tooling for VS Code
+* GitHub Copilot:
+      - Your AI pair programmer
+* SQL Tools
+      - Connecting users to many of the most commonly used databases. Welcome to database management done right.
+
+
+---------------------------------------------------------------------------------
+
 
 9. Document Your Setup:
     Create a comprehensive document outlining the steps you've taken to set up your developer environment. Include any configurations, customizations, or troubleshooting steps encountered during the process. 
